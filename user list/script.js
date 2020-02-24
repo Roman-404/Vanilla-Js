@@ -32,26 +32,26 @@ window.onload = () => {
 
 addUser.onclick = event => {
     event.preventDefault()
-    user_name = document.getElementById('input_name_main')
-    phone_number = document.getElementById('input_phone_number_main')
+    let user_name = document.getElementById('input_name_main')
+    let phone_number = document.getElementById('input_phone_number_main')
     if (validate(user_name, phone_number)) {
-        form = document.querySelector('form')
-        user_name = form.elements['name'];
-        phone_number = form.elements['phone_number'];
+        let form = document.querySelector('form')
+        let user_name = form.elements['name'];
+        let phone_number = form.elements['phone_number'];
         form.elements['name'].value = form.elements['phone_number'].value = createUser(user_name, phone_number)
     };
 };
 
 createItem = item => {
-    td = document.createElement('td')
-    element = document.createTextNode(item.value)
+    let td = document.createElement('td')
+    let element = document.createTextNode(item.value)
     td.id = td.className = item.name
     td.appendChild(element)
     return td;
 };
 
 createUser = (name, phone_number) => {
-    tr = document.createElement('tr')
+    let tr = document.createElement('tr')
     tr.appendChild(createItem(name))
     tr.appendChild(createItem(phone_number))
     tr.appendChild(createButton('edit'))
@@ -61,8 +61,8 @@ createUser = (name, phone_number) => {
 };
 
 createButton = (value) => {
-    span = document.createElement('span')
-    element = document.createTextNode(value)
+    let span = document.createElement('span')
+    let element = document.createTextNode(value)
     span.className = value
     span.appendChild(element)
     return span;
@@ -74,7 +74,7 @@ table.onclick = event => {
             event.target.parentNode.remove()
             break;
         case 'edit':
-            element = event.target.parentNode
+            let element = event.target.parentNode
             editMode = !element.classList.contains('editMode')
             if (onEdit(element)) {
                 editMode ? event.target.innerText = 'save' : event.target.innerText = 'edit'
@@ -90,11 +90,11 @@ table.onclick = event => {
 };
 
 onEdit = (element) => {
-    input_name = element.querySelector('.input_name_sub') ? element.querySelector('.input_name_sub') : document.createElement('input')
-    label_name = element.querySelector('#name')
-    input_phone_number = element.querySelector('.input_phone_number_sub') ? element.querySelector('.input_phone_number_sub') : document.createElement('input')
-    label_phone_number = element.querySelector('#phone_number')
-    isValid = handleFieldEdit(input_name, label_name, input_phone_number, label_phone_number)
+    let input_name = element.querySelector('.input_name_sub') ? element.querySelector('.input_name_sub') : document.createElement('input')
+    let label_name = element.querySelector('#name')
+    let input_phone_number = element.querySelector('.input_phone_number_sub') ? element.querySelector('.input_phone_number_sub') : document.createElement('input')
+    let label_phone_number = element.querySelector('#phone_number')
+    let isValid = handleFieldEdit(input_name, label_name, input_phone_number, label_phone_number)
     return isValid
 };
 

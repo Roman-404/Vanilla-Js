@@ -1,0 +1,119 @@
+body {
+    background-color: gainsboro;
+}
+
+h1 {
+    background-color: rgb(80, 78, 78);
+    padding: 30px 40px;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+h1::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+form {
+    margin-top: 3px;
+    width: 100%;
+    border: 1px solid grey;
+    text-align: center;
+}
+
+.wrapper {width: 920px; margin: 0 auto}
+
+caption {
+    background-color: rgb(163, 162, 158);
+    border: 1px solid grey;
+    margin-bottom: 1px;
+}
+
+th {border: 1px solid grey;}
+
+td {border: 1px solid grey; text-align: center;}
+
+tr:hover {
+    background-color: #f0f0f0;
+}
+
+tr {
+    height: 50px;
+}
+
+table { 
+    width: 100%;
+    border-spacing: 10px;
+    border: 1px solid grey;
+}
+
+   tr:nth-child(2n) {
+    background: #f0f0f0;
+}
+
+   tr:nth-child(1) {
+    background: #666;
+    color: #fff;
+}
+
+span {
+    display: inline-block;
+    border: 1px solid grey;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+span:hover {
+    background-color: gray;
+    color: white;
+}
+
+.del:hover {
+    background-color: tomato;
+}
+
+.name {
+    min-width: 100px;
+}
+
+input:valid {
+    min-width: 100px;
+    height: 40px;
+    display: inline-block;
+    border: 1px solid grey;
+    text-align: center;
+    display: table-cell;
+}
+
+button {
+    height: 50px;
+    width: 100px;
+    background-color: rgb(207, 207, 205);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+input.invalid {
+    min-width: 100px;
+    height: 40px;
+    display: inline-block;
+    border: 1px solid tomato;
+    text-align: center;
+    display: table-cell;
+}
+
+#error { color: tomato; }
+
+input[type="error"]::-moz-placeholder {
+    color: tomato
+}
+
+input[type="error"]::-webkit-input-placeholder {
+    color: tomato
+}

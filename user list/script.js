@@ -144,18 +144,19 @@ validate = (user_name, phone_number) => {
             output = 'Incorrect phone number format!'
             error.innerHTML = output
             return isError(phone_number)
-        }
-    }
-
-    phone_number.classList.remove('invalid');
-    error.innerHTML = "";
-    user_name.classList.remove('invalid')
-    phone_number.classList.remove('invalid')
-    user_name.type = phone_number.type = 'text'
-    user_name.placeholder = 'Enter username'
-    phone_number.placeholder = 'Enter phone number'
+        };
+    };
+    isSuccess(user_name)
+    isSuccess(phone_number)
     return true
 };
+
+isSuccess = value => {
+    error.innerHTML = "";
+    value.classList.remove('invalid')
+    value.type = 'text'
+    value.placeholder = value.id === 'input_name_sub' ? 'Enter username' : 'Enter phone number'
+}
 
 isError = value => {
     value.classList.add('invalid');

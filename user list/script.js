@@ -157,6 +157,7 @@ isSuccess = value => {
     error.innerHTML = "";
     value.classList.remove('invalid')
     value.type = 'text'
+    value.placeholder = value.id === 'input_name_sub' ? 'Enter username' : 'Enter phone number'
 }
 
 isError = value => {

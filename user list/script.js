@@ -81,7 +81,7 @@ table.onclick = event => {
                 element.classList.toggle('editMode')
             }
             else {
-                element.classList.toggle('editMode')
+                editMode = !element.classList.contains('editMode')
             }
             break;
         default:
@@ -140,6 +140,7 @@ validate = (user_name, phone_number) => {
     else if (!phone_number.value) {
         return isError(phone_number)
     }
+    
     else {
         re = (/^\+?\d[\d\(\)\ -]{4,14}\d$/);
         if (!re.test(phone_number.value)) {

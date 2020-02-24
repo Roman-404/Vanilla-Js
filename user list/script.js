@@ -113,6 +113,8 @@ saveLabel = (input, label) => {
 
 handleFieldEdit = (input_name, label_name, input_phone_number, label_phone_number) => {
     if (editMode) {
+        input_name.placeholder = !input_name.value ? 'Enter username' : ''
+        input_phone_number.placeholder = !input_phone_number.value ? 'Enter phone number' : ''
         updateLabel(label_name, input_name)
         updateLabel(label_phone_number, input_phone_number)
     }
@@ -155,7 +157,6 @@ isSuccess = value => {
     error.innerHTML = "";
     value.classList.remove('invalid')
     value.type = 'text'
-    value.placeholder = value.id === 'input_name_sub' ? 'Enter username' : 'Enter phone number'
 }
 
 isError = value => {

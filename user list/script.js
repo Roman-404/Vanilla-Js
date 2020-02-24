@@ -132,27 +132,18 @@ handleFieldEdit = (input_name, label_name, input_phone_number, label_phone_numbe
 validate = (user_name, phone_number) => {
 
     if (!user_name.value) {
-        user_name.className = 'invalid'
-        user_name.type = 'error'
-        user_name.placeholder = 'Empty field!'
-        return false
+        return isError(user_name)
     }
 
     else if (!phone_number.value) {
-        phone_number.className = 'invalid'
-        phone_number.type = 'error'
-        phone_number.placeholder = 'Empty field!'
-        return false
+        return isError(phone_number)
     }
     else {
-        re = /^\+?\d[\d\(\)\ -]{4,14}\d$/;
+        re = (/^\+?\d[\d\(\)\ -]{4,14}\d$/);
         if (!re.test(phone_number.value)) {
-            phone_number.className = 'invalid'
-            phone_number.type = 'error'
             output = 'Incorrect phone number format!'
-            phone_number.classList.add('invalid');
             error.innerHTML = output
-            return false
+            return isError(phone_number)
         }
     }
 
@@ -165,3 +156,10 @@ validate = (user_name, phone_number) => {
     phone_number.placeholder = 'Enter phone number'
     return true
 };
+
+isError = value => {
+    value.classList.add('invalid');
+    value.type = 'error'
+    value.placeholder = 'Empty field!'
+    return false
+}

@@ -104,12 +104,12 @@ updateLabel = (label, input) => {
     label.innerText = null
     label.appendChild(input)
     input.focus()
-}
+};
 
 saveLabel = (input, label) => {
     label.innerText = input.value
     input.value = null
-}
+};
 
 handleFieldEdit = (input_name, label_name, input_phone_number, label_phone_number) => {
     if (editMode) {
@@ -159,11 +159,11 @@ isSuccess = value => {
     value.classList.remove('invalid')
     value.type = 'text'
     value.placeholder = value.id === 'input_name_sub' ? 'Enter username' : 'Enter phone number'
-}
+};
 
 isError = value => {
     value.classList.add('invalid');
     value.type = 'error'
     value.placeholder = 'Empty field!'
     return false
-}
+};
